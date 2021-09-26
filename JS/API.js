@@ -1,7 +1,9 @@
 noResult();
+
 form.addEventListener("submit", function (e) {
     deleteResult();
     e.preventDefault();
+    loadingAnimation();
 
     // request title 
 
@@ -15,7 +17,6 @@ form.addEventListener("submit", function (e) {
                     console.log(Select.value);
                     // console.log(parseResult);
                     loopOnObject(parseResult);
-
                 } else {
                     alert("Error")
                 }
@@ -36,7 +37,6 @@ form.addEventListener("submit", function (e) {
                     console.log(Select.value);
                     // console.log(parseResult);
                     loopOnObject(parseResult);
-
                 } else {
                     alert("Error")
                 }
@@ -57,7 +57,6 @@ form.addEventListener("submit", function (e) {
                     console.log(Select.value);
                     // console.log(parseResult);
                     loopOnObject(parseResult);
-
                 } else {
                     alert("Error")
                 }
@@ -76,7 +75,6 @@ form.addEventListener("submit", function (e) {
                 if (getResult.status === 200) {
                     const parseResult = JSON.parse(getResult.responseText)
                     console.log(Select.value);
-
                     loopOnObject(parseResult);
                 } else {
                     alert("Error")
@@ -120,11 +118,10 @@ form.addEventListener("submit", function (e) {
 
                 }
             }
-
-
             addResult(artistName, title, album, nb);
 
         }
+        deleteLoadingAnimation();
         calculerSommeResult(nb);
         nb = 0;
     }

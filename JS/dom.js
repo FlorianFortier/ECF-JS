@@ -21,6 +21,7 @@ function addResult(artistName, title, album, nb) {
     const addPtitle = document.createElement("p");
     const addPalbum = document.createElement("p");
     const addPartist = document.createElement("p");
+    const showModal = document.createElement("button");
 
 
     // add css classes
@@ -30,6 +31,7 @@ function addResult(artistName, title, album, nb) {
     addPtitle.className = "text";
     addPalbum.className = "text";
     addPartist.className = "text";
+    showModal.className = "btn-modal";
 
     // define text content
 
@@ -37,6 +39,8 @@ function addResult(artistName, title, album, nb) {
     addPtitle.textContent = title;
     addPalbum.textContent = album;
     addPartist.textContent = artistName;
+    showModal.textContent = "+"
+
 
     // append
 
@@ -44,6 +48,7 @@ function addResult(artistName, title, album, nb) {
     addDiv.appendChild(addPartist);
     addDiv.appendChild(addPtitle);
     addDiv.appendChild(addPalbum);
+    addDiv.appendChild(showModal);
     zoneResult.appendChild(addDiv);
 }
 
@@ -79,5 +84,12 @@ function noResult() {
 function loadingAnimation() {
     const loader = document.createElement("div");
     zoneResult.appendChild(loader);
-    loader.className = "loader";
+    loader.className = "loader row jtcn";
 }
+function deleteLoadingAnimation() {
+    const loader = document.querySelector(".loader");
+    loader.innerHTML = "";
+    loader.className = "";
+}
+
+
